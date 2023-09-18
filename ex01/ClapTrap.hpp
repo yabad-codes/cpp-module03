@@ -6,7 +6,7 @@
 /*   By: yabad <yabad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 15:31:39 by yabad             #+#    #+#             */
-/*   Updated: 2023/09/16 17:47:02 by yabad            ###   ########.fr       */
+/*   Updated: 2023/09/18 18:19:47 by yabad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 
 class ClapTrap {
-	private:
+	protected:
 		std::string	Name;
 		int			HitPoints;
 		int			EnergyPoints;
