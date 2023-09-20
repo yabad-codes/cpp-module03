@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabad <yabad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/16 15:31:43 by yabad             #+#    #+#             */
-/*   Updated: 2023/09/20 11:05:15 by yabad            ###   ########.fr       */
+/*   Created: 2023/09/20 10:46:29 by yabad             #+#    #+#             */
+/*   Updated: 2023/09/20 10:50:07 by yabad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int	main() {
-	ClapTrap	tom("Voldemort");
-	ClapTrap	harry("harry potter");
+# include <iostream>
+# include "ClapTrap.hpp"
 
-	tom.setAttackDamage(5);
-	tom.attack(harry.getName());
-	harry.takeDamage(5);
-	harry.beRepaired(4);
-	
-	harry.setAttackDamage(50);
-	harry.attack(tom.getName());
-	tom.takeDamage(50);
-	tom.beRepaired(10);
-	
-	tom = harry;
-	return (0);
-}
+class FragTrap : public ClapTrap {
+	public:
+		FragTrap();
+		FragTrap(std::string);
+		FragTrap(const FragTrap&);
+		~FragTrap();
+		
+		FragTrap&	operator=(const FragTrap&);
+		
+		void	attack(const std::string&);
+		void	highFivesGuys(void);
+};
+
+#endif
